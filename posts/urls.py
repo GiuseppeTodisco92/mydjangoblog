@@ -15,7 +15,9 @@ urlpatterns = [
         #generata questa funzione è una sorta di scorciatoia per la quale possiasmo eliminare dal file views.py il def lista_post
         #il compito del list view è quello di mostrarci il contenuto del database in lista
     
-    path('post-singolo/', posts_views.post_singolo, name = "singolo"),
+    path('<int:id>/<slug:slug>/', DetailView.as_view(
+        model = Post,
+        template_name = "post_singolo.html"), name = "singolo"),
     path('contatti/', posts_views.contatti, name = "contatti"),
     
 ]
