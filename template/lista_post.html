@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div>
+        {% for object in object_list %}
+            <a href="{{object.get_absolute_url}}"><h1>{{ object.titolo}}</h1></a>
+            <h3>{{ object.data}}</h3>
+            <p>{{ object.contenuto|truncatechars:300}}</p>
+        {% endfor %}
+    </div>
 
-    {% for object in object_list %}
-        <a href="/{{ object.id}}/{{ object.slug}}/"><h1>{{ object.titolo}}</h1></a>
-        <h3>{{ object.data}}</h3>
-        <p>{{ object.contenuto|truncatechars:300}}</p>
-    {% endfor %}
+    <div>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">precedente</a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">successiva</a>
+        {% endif %}
+    </div>
+    </div>
+ 
+
 </body>
 </html>

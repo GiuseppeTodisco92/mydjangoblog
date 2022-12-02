@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -12,3 +13,7 @@ class Post(models.Model) :
 # questa funzione ci permette di mostrare il titolo all interno della sezione post admin
     def __str__(self):
         return self.titolo
+
+    #best practice per ottenere l 'url di un post singolo 
+    def get_absolute_url(self):
+        return reverse("singolo", kwargs = {"id": self.id, "slug": self.slug})
