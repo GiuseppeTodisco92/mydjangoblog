@@ -1,0 +1,24 @@
+
+.container_custom{
+    width: 50%;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.post_container{
+    border: 1px solid black;
+    margin-bottom: .625rem;
+}
+
+.title{
+    background-color: blue;
+    color: white;
+    padding: .3125rem;
+}
+
+.content{
+    padding: 0px 20px;
+}

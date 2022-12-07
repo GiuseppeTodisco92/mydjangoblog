@@ -19,6 +19,8 @@ urlpatterns = [
     path('<int:id>/<slug:slug>/', DetailView.as_view(
         model = Post,
         template_name = "post_singolo.html"), name = "singolo"),
+
     path('contatti/', posts_views.contatti, name = "contatti"),
+
     
 ]
