@@ -2,15 +2,23 @@
 QUESTO PER CREARE EREDITAERIETà TRA LE PAGINE, QUINDI AVERE STESSA INTESTAZIONE E FOOTER -->
 {% extends "base.html" %}
 {% block content %}
-    <div class="container_custom post">
+    <div class="container_custom">
+        
         {% for object in object_list %}
+        <div class="post">
+            <div>
+                <a href="{{object.get_absolute_url}}">
+                    <h2 class="title text-center">{{ object.titolo}}</h2>
+                </a>
+            </div>
             <div class="post_container">
-                <a href="{{object.get_absolute_url}}"><h2 class="title text-center">{{ object.titolo}}</h2></a>
                 <div class="content">
-                    <small>{{ object.data}}</small>
+                    <small class="data">{{ object.data}}</small>
                     <p>{{ object.contenuto|truncatechars:300}}</p>
                 </div>
             </div>
+        </div>
+        
            
         {% endfor %}
     </div>

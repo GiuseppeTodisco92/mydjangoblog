@@ -1,24 +1,40 @@
 
-.container_custom{
-    width: 50%;
-
+.header_style{
+    background-color: #1877f2;
 }
-
 a{
     text-decoration: none;
+    
 }
 
 .post_container{
-    border: 1px solid black;
     margin-bottom: .625rem;
+    max-width: 21.875rem;
+    height: 12.5rem;
+    overflow-y: auto;
 }
 
 .title{
-    background-color: blue;
+    background-color: #1877f2;
     color: white;
     padding: .3125rem;
+    
+}
+
+.data{
+    font-weight: bold;
 }
 
 .content{
     padding: 0px 20px;
+}
+
+.post{
+    border: 1px solid #1877f2;
+    margin-bottom: 3.125rem;
+}
+
+.footer{
+    background-color: lightgray;
+    padding: 3.125rem;
 }
